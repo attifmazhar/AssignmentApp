@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graphDeviceInfo"
+    app:startDestination="@id/scanDevice">
+
+    <fragment
+        android:id="@+id/scanDevice"
+        android:name="com.assignment.ui.scan.ScanDeviceFragment"
+        tools:layout="@layout/fragment_scan">
+
+        <!--scan btn click action-->
+        <action
+            android:id="@+id/toDeviceInfoList"
+            app:destination="@id/deviceInfoList"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/deviceInfoList"
+        android:name="com.assignment.ui.scan.ScanInfoListFragment"
+        tools:layout="@layout/fragment_device_info_list">
+
+        <action
+            android:id="@+id/toDeviceInfoDetail"
+            app:destination="@id/deviceInfoDetail" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/deviceInfoDetail"
+        android:name="com.assignment.ui.scan.DeviceInfoDetailsFragment"
+        tools:layout="@layout/fragment_device_info_detail">
+
+        <argument
+            android:name="infoType"
+            app:argType="integer" />
+
+    </fragment>
+
+</navigation>

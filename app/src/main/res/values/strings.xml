@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AssignmentApp</string>
+    <string name="scan_device">Scan device</string>
+    <string name="device">RAM</string>
+    <string name="system">System</string>
+    <string name="storage">Storage</string>
+    <string name="cpu">CPU</string>
+    <string name="battery">Battery</string>
+    <string name="screen">Screen</string>
+</resources>
