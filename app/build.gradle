@@ -110,4 +110,11 @@ dependencies {
     // Instrumented Unit Tests
     androidTestImplementation "com.linkedin.dexmaker:dexmaker-mockito:2.12.1"
     androidTestImplementation "org.mockito:mockito-core:2.28.2"
+
+
+    debugImplementation("androidx.fragment:fragment-testing:1.1.0-beta01")
+    debugImplementation("androidx.fragment:fragment-ktx:1.1.0-beta01")
+    debugImplementation("androidx.test:core:1.2.0")
+    debugImplementation("androidx.test:rules:1.2.0")
+    debugImplementation("androidx.test:runner:1.2.0")
 }

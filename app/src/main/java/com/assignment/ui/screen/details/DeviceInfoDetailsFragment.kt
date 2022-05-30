@@ -8,6 +8,7 @@ import com.assignment.R
 import com.assignment.databinding.FragmentDeviceInfoDetailBinding
 import com.assignment.ui.base.BaseFragment
 import com.assignment.utils.BatteryInfo
+import com.assignment.utils.DeviceInfoUtils
 import com.assignment.utils.DeviceInformation
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -28,9 +29,8 @@ class DeviceInfoDetailsFragment :
         batteryInfo = BatteryInfo(context)
 
         if (arguments != null) {
-            // The getPrivacyPolicyLink() method will be created automatically.
             val infoType = DeviceInfoDetailsFragmentArgs.fromBundle(requireArguments()).infoType
-            viewModel.initData(infoType, deviceInformation, batteryInfo)
+            viewModel.initData(infoType, DeviceInfoUtils(deviceInformation, batteryInfo))
         }
 
     }
