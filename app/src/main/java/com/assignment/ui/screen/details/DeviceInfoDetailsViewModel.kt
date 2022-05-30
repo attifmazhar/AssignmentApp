@@ -1,6 +1,5 @@
 package com.assignment.ui.scan
 
-import android.widget.TextView
 import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
 import com.assignment.data.helper.*
@@ -22,8 +21,8 @@ class DeviceInfoDetailsViewModel @Inject constructor() : ViewModel() {
             DEVICE_INFO_RAM -> {
                 title.set("RAM")
 
-                val totalRam = dInfo.getTotalRam().toInt()
-                val availableRam = dInfo.getAvailableRam().toInt()
+                val totalRam = dInfo.totalRam.toInt()
+                val availableRam = dInfo.availableRam.toInt()
                 details.set("RAM usage : ${(totalRam - availableRam)}  / $totalRam  MB ")
 
             }
@@ -65,7 +64,7 @@ class DeviceInfoDetailsViewModel @Inject constructor() : ViewModel() {
         strSystemInfo.append("Android OS: " + deviceClass.getOSVersion())
         strSystemInfo.append("\n")
 
-        strSystemInfo.append("Security: "+deviceClass.getSecurityPatchLevel())
+        strSystemInfo.append("Security: "+deviceClass.securityPatchLevel)
         strSystemInfo.append("\n")
 
         strSystemInfo.append("Build NO: "+deviceClass.getBuildHost())
@@ -86,7 +85,7 @@ class DeviceInfoDetailsViewModel @Inject constructor() : ViewModel() {
         } else "Not Rooted")
         strSystemInfo.append("\n")
 
-        strSystemInfo.append("SeLinux: "+deviceClass.isSeLinuxEnforcing())
+        strSystemInfo.append("SeLinux: "+deviceClass.isSeLinuxEnforcing)
         strSystemInfo.append("\n")
 
         details.set(strSystemInfo.toString())
@@ -96,7 +95,7 @@ class DeviceInfoDetailsViewModel @Inject constructor() : ViewModel() {
 
     private fun setupProcessor(dInfo: DeviceInformation) {
         val processorStr = StringBuilder("")
-        for (i in 0 until dInfo.getNumOfCores()) {
+        for (i in 0 until dInfo.numOfCores) {
             val coreFreq: Int = dInfo.getFrequencyOfCore(i)
             val progressPercentage: Int = dInfo.calculatePercentage(
                 coreFreq,
@@ -157,13 +156,13 @@ class DeviceInfoDetailsViewModel @Inject constructor() : ViewModel() {
         val health = "Health ${deviceInformation.getBatteryHealth()}"
         val percentage = "Percentage ${deviceInformation.getBatteryPercent()} %"
 
-        val connectedState = if (batteryInfo.isCharging()) {
+        val connectedState = if (batteryInfo.isCharging) {
             "Connected"
         } else {
             "Disconnected"
         }
 
-        val chargingState = if (batteryInfo.isCharging()) {
+        val chargingState = if (batteryInfo.isCharging) {
             "Charging"
         } else {
             "Discharging"

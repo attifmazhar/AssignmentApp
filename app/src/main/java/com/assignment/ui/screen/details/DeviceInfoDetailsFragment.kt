@@ -1,7 +1,6 @@
 package com.assignment.ui.scan
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.assignment.BR
