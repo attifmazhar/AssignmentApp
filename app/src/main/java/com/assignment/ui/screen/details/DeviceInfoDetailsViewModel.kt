@@ -1,6 +1,5 @@
 package com.assignment.ui.scan
 
-import android.widget.TextView
 import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
 import com.assignment.data.helper.*

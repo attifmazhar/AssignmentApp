@@ -3,14 +3,11 @@ package com.assignment.ui.scan
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.FragmentNavigatorExtras
 import com.assignment.BR
 import com.assignment.R
 import com.assignment.databinding.FragmentDeviceInfoListBinding
 import com.assignment.ui.adapter.ScanInfoListAdapter
 import com.assignment.ui.base.BaseFragment
-import com.assignment.utils.BatteryInfo
-import com.assignment.utils.DeviceInformation
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
